@@ -17,7 +17,7 @@ email: yunhuang@smail.nju.edu.cn
 email_alt: ""                      # 留空则不显示（私人邮箱不公开）
 
 # 站点信息（页脚"源码"链接；留空不显示）
-repo_url: ""                        # 如 https://github.com/BruceWong0312/BruceWong0312.github.io
+repo_url: "https://github.com/BruceWong0312/BruceWong0312.github.io"
 
 # 外部链接：留空或删掉即不显示
 links:

@@ -5,6 +5,9 @@
 
 ## [Unreleased]
 
+### 2026-08-22 · M2 内容补充
+- `skills.yml` 学术培训新增：2025 年中国社会科学院大学"第八届香樟青苗计划"（结业证书）；重建 `docs/`，截图 `research/screenshots/m2-skills-training.png`。
+
 ### 2026-08-22 · M1 可预览原型
 - **构建脚本** `build.py`：PyYAML 读取 `content/*.yml`，Jinja2 渲染 `templates/index.html.j2` 到 `docs/index.html`；复制 `assets/`；页脚自动写入北京时间构建日期；YAML 出错时提示文件名 + 行号；照片 / CV 文件缺失时自动降级（占位图 / 隐藏链接）。
 - **模板**：7 个板块（Header、简介 + 研究兴趣、教育、论文、学术会议、项目与学术服务、专业能力 + 学术培训），数据为空的板块自动隐藏；论文采用"题目 / 作者（本人加粗）/ 期刊·年卷页 + 小字链接"三行结构。

@@ -7,6 +7,8 @@
 
 ### 2026-08-22 · M2 内容补充
 - `skills.yml` 学术培训新增：2025 年中国社会科学院大学"第八届香樟青苗计划"（结业证书）；重建 `docs/`，截图 `research/screenshots/m2-skills-training.png`。
+- `talks.yml` 补齐年份：ICCE 第九届 = 2024、第八届清华公共管理青年学者论坛 = 2025，并按年份倒序；`publications.yml` 工作论文年份同步改为 2025；截图 `research/screenshots/m2-talks.png`。
+- 隐私与导师：`profile.yml` 去掉 QQ 邮箱（`email_alt` 留空），简介加"师从张海波教授"；`education.yml` 博士条目备注"导师：张海波 教授"；截图 `research/screenshots/m2-header-education.png`。
 
 ### 2026-08-22 · M1 可预览原型
 - **构建脚本** `build.py`：PyYAML 读取 `content/*.yml`，Jinja2 渲染 `templates/index.html.j2` 到 `docs/index.html`；复制 `assets/`；页脚自动写入北京时间构建日期；YAML 出错时提示文件名 + 行号；照片 / CV 文件缺失时自动降级（占位图 / 隐藏链接）。

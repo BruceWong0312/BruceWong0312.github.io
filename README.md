@@ -1,6 +1,6 @@
 # 🏠 黄允 · 个人学术主页
 
-> 🌐 上线地址：待部署（见 `TODO.md` M3）
+> 🌐 上线地址：**https://brucewong0312.github.io** ｜ 源码：https://github.com/BruceWong0312/BruceWong0312.github.io
 > 📐 风格：何国俊 / 王绍达式极简学者主页 —— 白底、单栏、内容优先
 > 🛠️ 技术：`content/*.yml` → `build.py`（Python + Jinja2）→ `docs/index.html` → GitHub Pages
 
@@ -8,7 +8,7 @@
 
 | 文件 / 目录 | 用途 |
 |---|---|
-| `content/` | ✏️ **日常只改这里**：姓名、简介、论文、项目、会议、能力、奖项（YAML） |
+| `content/` | ✏️ **日常只改这里**：姓名、简介、论文、项目、会议、能力（YAML） |
 | `content/README.md` | 修改指南 + YAML 三条规则 |
 | `build.py` | 一键生成网页：`python build.py` |
 | `templates/index.html.j2` | 页面骨架（想调板块顺序改这里） |

@@ -22,7 +22,7 @@
 - [x] 🤖 提交：`build:` / `style:` / `content:` / `docs:` — 08-22
 
 ## M2 内容补全与打磨（进行中）
-- [ ] 🙋 提供照片 → `assets/img/photo.jpg`（建议 ≥ 400×500，JPG < 300KB）
+- [x] 🙋 提供照片 → `assets/img/photo.jpg`（已裁切为 480×600，37 KB） — 08-22
 - [ ] 🙋 提供不含手机号的 CV PDF → `assets/files/CV_YunHuang.pdf`
 - [x] 🙋 两次论坛年份：ICCE 2024、清华论坛 2025 — 08-22
 - [ ] 🙋 两篇论文 DOI、福建社科年会获奖论文题目（`content/` 里标 `# TODO` 处）
@@ -35,13 +35,13 @@
 - [ ] 🤖 可访问性与 SEO：`<title>`、`<meta description>`、`lang="zh-CN"`、图片 `alt`、Open Graph 基本标签
 - [ ] 🤖 更新 `CHANGELOG.md`，提交 `content:` / `style:`
 
-## M3 上线（GitHub Pages）
-- [ ] 🙋 确认 GitHub 用户名（默认 `BruceWong0312`）；本机未装 `gh`，首次 push 会弹出浏览器授权
-- [ ] 🤖 在 GitHub 新建公开仓库 `<用户名>.github.io`（空仓库，不勾 README）
-- [ ] 🤖 `git remote add origin https://github.com/<用户名>/<用户名>.github.io.git` → `git push -u origin main`
-- [ ] 🙋 仓库 Settings → Pages → Source: `Deploy from a branch` → Branch `main` / Folder `/docs` → Save
-- [ ] 🤝 等待 1–3 分钟，访问 `https://<用户名>.github.io` 验证；手机端也打开一次
-- [ ] 🤖 在 `README.md` 顶部写上线地址；`CHANGELOG.md` 记录上线日期
+## M3 上线（GitHub Pages）（2026-08-22）
+- [x] 🙋 确认 GitHub 用户名 `BruceWong0312`；本机 Git 凭据管理器已存有 token（repo/workflow 权限） — 08-22
+- [x] 🤖 通过 API 新建公开仓库 `BruceWong0312.github.io` — 08-22
+- [x] 🤖 `git remote add origin` → `git push -u origin main` — 08-22
+- [x] 🤖 通过 API 把 Pages 源设为 `main` / `/docs`（无需手动点 Settings） — 08-22
+- [ ] 🤝 访问 https://brucewong0312.github.io 验证（电脑 + 手机）
+- [x] 🤖 `README.md` 写上线地址；`CHANGELOG.md` 记录上线 — 08-22
 
 ## M4 增强（可选，按需勾选）
 - [ ] 英文版 `/en/index.html`：在 YAML 中增加 `*_en` 字段，`build.py` 渲染两套
@@ -55,3 +55,4 @@
 ## 🧾 变更日志（本文件）
 - 2026-08-22：创建，M0 全部完成。
 - 2026-08-22：M1 全部完成（荣誉奖项板块按用户要求移除，`content/awards.yml` 已删除）。
+- 2026-08-22：M3 上线完成，剩余线上验证。

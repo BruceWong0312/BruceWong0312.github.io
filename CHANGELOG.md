@@ -5,6 +5,12 @@
 
 ## [Unreleased]
 
+### 2026-08-22 · M3 上线
+- **照片**：`个人照片.png`（1537×1023 横图）以脸部为中心裁成 4:5 竖版，压缩为 `assets/img/photo.jpg`（480×600，37 KB）；原图加入 `.gitignore` 不入库。
+- **仓库**：通过 GitHub API 创建公开仓库 `BruceWong0312/BruceWong0312.github.io`，`git push -u origin main`。
+- **Pages**：源设为 `main` 分支 `/docs` 目录；站点地址 https://brucewong0312.github.io 。
+- **页脚**：`profile.yml` 的 `repo_url` 指向仓库，页脚出现"源码"链接。
+
 ### 2026-08-22 · M2 内容补充
 - `skills.yml` 学术培训新增：2025 年中国社会科学院大学"第八届香樟青苗计划"（结业证书）；重建 `docs/`，截图 `research/screenshots/m2-skills-training.png`。
 - `talks.yml` 补齐年份：ICCE 第九届 = 2024、第八届清华公共管理青年学者论坛 = 2025，并按年份倒序；`publications.yml` 工作论文年份同步改为 2025；截图 `research/screenshots/m2-talks.png`。

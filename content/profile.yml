@@ -16,6 +16,9 @@ photo: assets/img/photo.jpg          # TODO: 放一张 400x500 左右的证件/�
 email: yunhuang@smail.nju.edu.cn
 email_alt: 1906870153@qq.com       # 留空则不显示
 
+# 站点信息（页脚"源码"链接；留空不显示）
+repo_url: ""                        # 如 https://github.com/BruceWong0312/BruceWong0312.github.io
+
 # 外部链接：留空或删掉即不显示
 links:
   cv: assets/files/CV_YunHuang.pdf   # TODO: 导出一版不含手机号的 PDF 简历

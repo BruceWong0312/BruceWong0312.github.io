@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ p.name_zh }} {{ p.name_en }} · {{ p.affiliation_zh }}</title>
+<meta name="description" content="{{ p.name_zh }}（{{ p.name_en }}），{{ p.affiliation_zh }}{{ p.title_zh }}。研究兴趣：{{ p.interests | join('、') }}。">
+<meta property="og:title" content="{{ p.name_zh }} · {{ p.name_en }}">
+<meta property="og:description" content="{{ p.affiliation_zh }}{{ p.title_zh }}">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d4e89'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='serif'%3E黄%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="页内导航">
+  <div class="wrap nav-inner">
+    <a class="nav-name" href="#top">{{ p.name_zh }}</a>
+    <ul class="nav-links">
+      <li><a href="#about">简介</a></li>
+      {% if education is nonempty %}<li><a href="#education">教育</a></li>{% endif %}
+      {% if published is nonempty or working is nonempty or in_progress is nonempty %}<li><a href="#publications">论文</a></li>{% endif %}
+      {% if talks is nonempty %}<li><a href="#talks">会议</a></li>{% endif %}
+      {% if project_groups is nonempty %}<li><a href="#projects">项目</a></li>{% endif %}
+      {% if skill_groups is nonempty %}<li><a href="#skills">能力</a></li>{% endif %}
+      {% if p.links.cv %}<li><a href="{{ p.links.cv }}" target="_blank" rel="noopener">CV</a></li>{% endif %}
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+
+  <!-- ===== 1. Header ===== -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1 class="name">{{ p.name_zh }}<span class="name-en">{{ p.name_en }}</span></h1>
+      <p class="role">{{ p.title_zh }} · {{ p.affiliation_zh }}</p>
+      <p class="role-en">{{ p.title_en }}, {{ p.affiliation_en }}</p>
+      <p class="contact">
+        <a href="mailto:{{ p.email }}">{{ p.email }}</a>
+        {% if p.email_alt %}<span class="sep">·</span><a href="mailto:{{ p.email_alt }}">{{ p.email_alt }}</a>{% endif %}
+      </p>
+      {% if p.links %}
+      <p class="links">
+        {% if p.links.cv %}<a href="{{ p.links.cv }}" target="_blank" rel="noopener">CV</a>{% endif %}
+        {% if p.links.google_scholar %}<a href="{{ p.links.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
+        {% if p.links.orcid %}<a href="{{ p.links.orcid }}" target="_blank" rel="noopener">ORCID</a>{% endif %}
+        {% if p.links.github %}<a href="{{ p.links.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+        {% if p.links.researchgate %}<a href="{{ p.links.researchgate }}" target="_blank" rel="noopener">ResearchGate</a>{% endif %}
+      </p>
+      {% endif %}
+    </div>
+    <figure class="hero-photo{% if p.photo_is_placeholder %} is-placeholder{% endif %}">
+      <img src="{{ p.photo }}" alt="{{ p.name_zh }}的照片" width="160" height="200">
+    </figure>
+  </header>
+
+  <!-- ===== 2. 简介 + 研究兴趣 ===== -->
+  <section id="about" class="section">
+    <h2><span class="zh">简介</span><span class="en">About</span></h2>
+    {% for para in (p.bio_zh or '').strip().split('\n\n') if para.strip() %}
+    <p class="bio">{{ para | replace('\n', '') }}</p>
+    {% endfor %}
+    {% if p.interests is nonempty %}
+    <div class="interests">
+      <span class="label">研究兴趣</span>
+      <ul class="tags">
+        {% for it in p.interests %}<li>{{ it }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </section>
+
+  <!-- ===== 3. 教育经历 ===== -->
+  {% if education is nonempty %}
+  <section id="education" class="section">
+    <h2><span class="zh">教育经历</span><span class="en">Education</span></h2>
+    <ul class="timeline">
+      {% for e in education %}
+      <li>
+        <span class="when">{{ e.period }}</span>
+        <span class="what">
+          <strong>{{ e.school }}</strong>，{{ e.major }}{{ e.degree }}
+          {% if e.note %}<br><span class="note">{{ e.note }}</span>{% endif %}
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <!-- ===== 4. 论文 ===== -->
+  {% if published is nonempty or working is nonempty or in_progress is nonempty %}
+  <section id="publications" class="section">
+    <h2><span class="zh">论文</span><span class="en">Publications</span></h2>
+    <p class="pub-note">加粗为本人。</p>
+
+    {% macro pub_links(item) %}
+      {% set ls = (item.links or []) | list %}
+      {% if item.doi %}{% set ls = ls + [{'label': 'DOI', 'url': item.doi}] %}{% endif %}
+      {% if ls %}
+      <span class="pub-links">
+        {% for l in ls %}<a href="{{ l.url }}" target="_blank" rel="noopener">[{{ l.label }}]</a>{% endfor %}
+      </span>
+      {% endif %}
+    {% endmacro %}
+
+    {% macro pub_title(item) %}
+      {% set first = (item.links or []) | first %}
+      {% set href = first.url if first else (item.doi or '') %}
+      {% if href %}<a class="pub-title" href="{{ href }}" target="_blank" rel="noopener">{{ item.title }}</a>
+      {% else %}<span class="pub-title">{{ item.title }}</span>{% endif %}
+    {% endmacro %}
+
+    {% if published is nonempty %}
+    <h3>已发表</h3>
+    <ol class="pubs">
+      {% for item in published %}
+      <li>
+        {{ pub_title(item) }}
+        <span class="pub-authors">{{ item.authors | bold }}</span>
+        <span class="pub-venue"><em>{{ item.journal }}</em>{% if item.year %}, {{ item.year }}{% endif %}{% if item.volume %}, {{ item.volume }}{% endif %}.</span>
+        {% if item.note %}<span class="pub-extra">{{ item.note }}</span>{% endif %}
+        {{ pub_links(item) }}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+
+    {% if working is nonempty %}
+    <h3>工作论文</h3>
+    <ol class="pubs">
+      {% for item in working %}
+      <li>
+        {{ pub_title(item) }}
+        <span class="pub-authors">{{ item.authors | bold }}</span>
+        <span class="pub-venue">{{ item.status or '工作论文' }}{% if item.year %}, {{ item.year }}{% endif %}.</span>
+        {% if item.note %}<span class="pub-extra">{{ item.note }}</span>{% endif %}
+        {{ pub_links(item) }}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+
+    {% if in_progress is nonempty %}
+    <h3>在研</h3>
+    <ul class="pubs pubs-plain">
+      {% for item in in_progress %}
+      <li><span class="pub-title">{{ item.title }}</span>{% if item.note %} <span class="pub-extra">{{ item.note }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <!-- ===== 5. 学术会议 ===== -->
+  {% if talks is nonempty %}
+  <section id="talks" class="section">
+    <h2><span class="zh">学术会议</span><span class="en">Talks</span></h2>
+    <ul class="timeline">
+      {% for t in talks %}
+      <li>
+        <span class="when">{{ t.year or '—' }}</span>
+        <span class="what">
+          {% if t.format %}<span class="badge">{{ t.format }}</span>{% endif %}
+          <strong>{{ t.event }}</strong>{% if t.host %}<span class="muted">（{{ t.host }}）</span>{% endif %}
+          {% if t.paper %}<br><span class="note">{{ t.paper }}</span>{% endif %}
+          {% if t.note %}<br><span class="note">{{ t.note }}</span>{% endif %}
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <!-- ===== 6. 项目与学术服务 ===== -->
+  {% if project_groups is nonempty %}
+  <section id="projects" class="section">
+    <h2><span class="zh">项目与学术服务</span><span class="en">Projects &amp; Service</span></h2>
+    {% for g in project_groups %}
+    <h3>{{ g.label }}</h3>
+    <ul class="timeline">
+      {% for pr in g["items"] %}
+      <li>
+        <span class="when">{{ pr.period }}</span>
+        <span class="what">
+          <strong>{{ pr.org }}</strong>{% if pr.role %}<span class="muted"> · {{ pr.role }}</span>{% endif %}
+          {% if pr.desc %}<br><span class="note">{{ pr.desc }}</span>{% endif %}
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <!-- ===== 7. 专业能力 + 学术培训 ===== -->
+  {% if skill_groups is nonempty or training is nonempty %}
+  <section id="skills" class="section">
+    <h2><span class="zh">专业能力</span><span class="en">Skills</span></h2>
+    {% for g in skill_groups %}
+    <div class="skill-row">
+      <span class="label">{{ g.name }}</span>
+      <ul class="tags">{% for it in g["items"] %}<li>{{ it }}</li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+    {% if training is nonempty %}
+    <h3>学术培训</h3>
+    <ul class="timeline">
+      {% for tr in training %}
+      <li>
+        <span class="when">{{ tr.year }}</span>
+        <span class="what">{{ tr.name }}{% if tr.note %}<span class="muted"> · {{ tr.note }}</span>{% endif %}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+  {% endif %}
+
+</main>
+
+<footer class="wrap foot">
+  <span>© {{ year }} {{ p.name_zh }}</span>
+  <span class="sep">·</span>
+  <span>最后更新 {{ build_date }}</span>
+  {% if p.repo_url %}<span class="sep">·</span><a href="{{ p.repo_url }}" target="_blank" rel="noopener">源码</a>{% endif %}
+</footer>
+
+</body>
+</html>

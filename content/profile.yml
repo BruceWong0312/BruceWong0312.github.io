@@ -1,0 +1,44 @@
+# =====================================================================
+# 个人基本信息（首页顶部 + 页脚）
+# 修改后运行 `python build.py` 重新生成网页；所有字段均可直接改。
+# 标注 TODO 的字段需要你补充；不想展示的字段留空或删掉该行。
+# =====================================================================
+
+name_zh: 黄允
+name_en: Yun Huang
+title_zh: 博士研究生
+title_en: Ph.D. Student
+affiliation_zh: 南京大学 政府管理学院
+affiliation_en: School of Government, Nanjing University
+photo: assets/img/photo.jpg          # TODO: 放一张 400x500 左右的证件/形象照到该路径
+
+# 联系方式（公开网页上只放邮箱，不放手机号）
+email: yunhuang@smail.nju.edu.cn
+email_alt: 1906870153@qq.com       # 留空则不显示
+
+# 外部链接：留空或删掉即不显示
+links:
+  cv: assets/files/CV_YunHuang.pdf   # TODO: 导出一版不含手机号的 PDF 简历
+  google_scholar: ""                 # TODO
+  orcid: ""                          # TODO
+  github: ""                         # TODO: 如 https://github.com/BruceWong0312
+  researchgate: ""
+
+# 个人简介（首页第一段，第三人称、3-5 句，参考何国俊/王绍达的写法）
+bio_zh: |
+  黄允，南京大学政府管理学院应急管理专业博士研究生（2025 年入学），
+  硕士毕业于华侨大学行政管理专业（2024），本科毕业于华侨大学金融专业（2021）。
+  研究兴趣集中在政策扩散、产业政策、人工智能与公共治理、应急管理、自然灾害与气候变化，
+  主要采用因果推断（DID、RDD 等）、基于大语言模型的政策文本分析以及机器学习方法
+  （广义随机森林、双重机器学习）开展公共政策评估研究。
+  论文发表于 International Review of Economics & Finance、
+  Humanities and Social Sciences Communications 等期刊。
+
+# 研究兴趣（"喜好的领域"板块，首页以标签或短列表展示）
+interests:
+  - 政策扩散与政策创新
+  - 产业政策评估
+  - 人工智能与公共治理
+  - 应急管理
+  - 自然灾害与气候变化
+  - 环境经济学 / 碳减排政策

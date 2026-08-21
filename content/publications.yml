@@ -1,0 +1,42 @@
+# =====================================================================
+# 论文：分 published（已发表）/ working（工作论文）/ in_progress（在研）三组。
+# 每条字段：
+#   authors  作者串，自己的名字用 **Huang, Y.** 包起来会被加粗
+#   title    题目
+#   journal  期刊（已发表填）；工作论文可写 status，如 "R&R at xxx" / "Under review"
+#   year     年份
+#   volume   卷期页，可留空
+#   doi      DOI 链接，可留空
+#   links    [{label: PDF, url: ...}, {label: Slides, url: ...}]，没有就留空
+#   note     备注（如"通讯作者"），首页以小字显示
+# 新增一篇就复制一整条，改内容即可。
+# =====================================================================
+
+published:
+  - authors: "Zhou, B., **Huang, Y.**, & Zhao, Y."
+    title: "Research on the incentive effect of the policy combination of carbon-reduction pilot cities"
+    journal: "International Review of Economics & Finance"
+    year: 2024
+    volume: "91, 456–475"
+    doi: ""                                   # TODO: 补 DOI
+    links: []
+    note: "通讯作者 · SSCI 一区"
+
+  - authors: "Zhou, B., **Huang, Y.**, Su, H., & Wang, J."
+    title: "Mechanism conflicts: carbon reduction pathways and optimization in China's Big Data Policy"
+    journal: "Humanities and Social Sciences Communications"
+    year: 2025
+    volume: "12(1), 1–15"
+    doi: ""                                   # TODO: 补 DOI
+    links: []
+    note: "SSCI 一区"
+
+working:
+  - authors: "**黄允**"
+    title: "控制权与多任务代理：环保垂直管理改革如何影响地方政府的低碳发展激励"
+    status: "工作论文"                         # TODO: 更新状态（投稿中 / R&R 等）
+    year: 2024
+    links: []
+    note: "第八届清华大学公共管理青年学者论坛海报展示"
+
+in_progress: []   # 在研项目标题可先列在这里，例如 - title: "..."  note: "with xxx"

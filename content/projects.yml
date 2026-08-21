@@ -1,0 +1,37 @@
+# 项目与学术服务经历：按时间倒序。type 用于分组显示，可选：
+#   research（科研项目）/ service（学术服务）/ teaching（助教）/ survey（调查）/ other
+- period: 2024.11 – 至今
+  type: service
+  role: 匿名审稿人
+  org: International Review of Economics & Finance；Public Administration and Development
+  desc: 为上述期刊审稿，累计 2 篇。
+
+- period: 2025.02 – 至今
+  type: service
+  role: 推文作者
+  org: 香樟经济学术平台 · "香樟经济中文库"公众号
+  desc: 撰写经济学/公共政策前沿论文推介，已发布数篇。
+
+- period: 2023.11 – 2024.05
+  type: teaching
+  role: 助教
+  org: 清华大学"大数据与因果推断研讨班"
+  desc: 辅助线上授课、汇总学员论文；整理授课内容发布于公众号"清华社会科学与国家治理"（《活动回顾｜张川川：双重差分与事件分析》）。
+
+- period: 2022.09 – 2024.05
+  type: research
+  role: 硕士学位论文
+  org: 国家大数据综合试验区的碳减排效应路径与优化研究
+  desc: 评估大数据政策的碳减排效应与路径；以数据驱动方法优化试点城市分配。工具：Stata / R / Python。
+
+- period: 2022.08 – 2022.09
+  type: survey
+  role: 访员 / 团队成员
+  org: 2022 年北上广深都市社区电话调查
+  desc: 面向京沪穗深常住居民的随机抽样电话调查，为学术研究与政府决策咨询提供基础数据。
+
+- period: 2022.01 – 2022.05
+  type: research
+  role: 课题组成员
+  org: 福建省社科基金项目"福建省碳减排目标责任考核激励机制研究"（FJ2022B077）
+  desc: 参与立项论证：文献收集与综述撰写、创新点提炼。

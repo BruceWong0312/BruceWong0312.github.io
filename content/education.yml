@@ -1,0 +1,18 @@
+# 教育经历：按时间倒序。period 用 "起–止"，在读写 "至今"。
+- period: 2025 – 至今
+  degree: 博士研究生
+  major: 应急管理
+  school: 南京大学 政府管理学院
+  note: ""                           # 可写导师、研究课题等，留空不显示
+
+- period: 2021 – 2024
+  degree: 硕士
+  major: 行政管理
+  school: 华侨大学 政治与公共管理学院
+  note: 学位论文：国家大数据综合试验区的碳减排效应路径与优化研究
+
+- period: 2017 – 2021
+  degree: 学士
+  major: 金融学
+  school: 华侨大学
+  note: ""

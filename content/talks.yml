@@ -1,0 +1,19 @@
+# 学术会议 / 论坛：按时间倒序。format 可选：口头汇报 / 海报展示 / 参会 / 评论人
+- year: ""                                    # TODO: 补年份
+  format: 口头汇报
+  event: "The 9th International Conference on The Chinese Economy: Past, Present and Future"
+  host: 清华大学社会科学学院经济学研究所
+  paper: "Research on the Incentive Portfolio of Carbon Reduction Pilot City Policies in China: A Quasi-natural Experiment Based on a Dual Pilot"
+
+- year: ""                                    # TODO: 补年份
+  format: 海报展示
+  event: 第八届清华大学公共管理青年学者论坛
+  host: 清华大学公共管理学院
+  paper: "控制权与多任务代理：环保垂直管理改革如何影响地方政府的低碳发展激励"
+
+- year: 2024
+  format: 获奖论文
+  event: 福建省社科界 2024 年学术年会"两岸融合发展与福建政务效能提升"论坛
+  host: 福建省社科联
+  paper: ""                                   # TODO: 补论文题目
+  note: 优秀论文一等奖

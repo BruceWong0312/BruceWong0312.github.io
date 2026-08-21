@@ -1,11 +1,11 @@
 # 📋 PLAN — 黄允个人学术主页
 
-> 版本：v1.0 ｜ 创建：2026-08-22 ｜ 状态：M0 完成，待执行 M1
+> 版本：v1.1 ｜ 创建：2026-08-22 ｜ 状态：M1 完成，待执行 M2
 > 配套文件：`TODO.md`（任务清单）· `CHANGELOG.md`（留痕）· `research/`（调研原始报告）· `content/`（全部可编辑内容）
 
 ## 0. 一句话目标
 
-做一个**何国俊 / 王绍达式的极简学者主页**：白底、单栏、无衬线、信息优先，内容只保留博士阶段、论坛、项目经验、论文、专业能力、研究兴趣六块；所有文字放在 YAML 里随时可改，整个制作过程用 git + CHANGELOG 留痕，最终部署到 GitHub Pages。
+做一个**何国俊 / 王绍达式的极简学者主页**：白底、单栏、无衬线、信息优先，内容只保留博士阶段、论坛、项目经验、论文、专业能力、研究兴趣六块（不放荣誉奖项）；所有文字放在 YAML 里随时可改，整个制作过程用 git + CHANGELOG 留痕，最终部署到 GitHub Pages。
 
 ## 1. 调研结论（详见 `research/0x-*.md`）
 
@@ -62,8 +62,7 @@ content/*.yml  ──►  build.py（Jinja2 模板渲染）  ──►  docs/ind
 | 5 | **学术会议** | `talks.yml` | `年份 · 口头汇报 / 海报 · 会议名（主办方）` + 论文题目 |
 | 6 | **项目与学术服务** | `projects.yml` | 按类型分组：科研项目 / 学术服务（审稿、推文）/ 助教 / 调查；每条"时间 · 角色 · 项目名 + 一句话" |
 | 7 | **专业能力** | `skills.yml` | 三行标签：研究方法 / 编程与软件 / 语言；下方小节"学术培训" |
-| 8 | **荣誉奖项** | `awards.yml` | 年份 + 奖项名，一行一条 |
-| 9 | 页脚 | 自动 | "最后更新：YYYY-MM-DD"（构建时写入）· © 黄允 · 源码链接 |
+| 8 | 页脚 | 自动 | "最后更新：YYYY-MM-DD"（构建时写入）· © 黄允 · 源码链接 |
 
 ### 3.3 视觉规范
 - 版心最大宽度 **760px**，左右内边距 24px；`< 640px` 时照片移到姓名上方居中。
@@ -82,7 +81,7 @@ content/*.yml  ──►  build.py（Jinja2 模板渲染）  ──►  docs/ind
 ├── content/                # ★ 你日常只改这里
 │   ├── README.md           # 修改指南
 │   ├── profile.yml  education.yml  publications.yml  projects.yml
-│   └── talks.yml  skills.yml  awards.yml
+│   └── talks.yml  skills.yml
 ├── templates/
 │   └── index.html.j2       # Jinja2 模板（页面骨架）
 ├── assets/
@@ -127,7 +126,7 @@ git add -A && git commit -m "content: 新增 xxx 论文" && git push
 | 里程碑 | 内容 | 验收标准 | 预计 |
 |---|---|---|---|
 | **M0 调研与规划** | 4 项调研、内容 YAML、PLAN / TODO、git 初始化 | 本文件 + `TODO.md` 提交 | ✅ 2026-08-22 |
-| **M1 可预览原型** | `build.py` + 模板 + CSS，渲染全部 8 个板块 | `python build.py` 无报错；本地浏览器桌面 / 手机宽度均正常 | 08-22 ~ 08-23 |
+| **M1 可预览原型** | `build.py` + 模板 + CSS，渲染全部 7 个板块 | `python build.py` 无报错；本地浏览器桌面 / 手机宽度均正常 | ✅ 2026-08-22 |
 | **M2 内容补全与打磨** | 补 TODO 字段（照片、CV PDF、DOI、年份、导师）、文案润色 | 页面无 "TODO" 字样；论文条目有可点链接 | 08-23 ~ 08-25 |
 | **M3 上线** | 建 `BruceWong0312.github.io` 仓库、推送、开启 Pages | `https://brucewong0312.github.io` 电脑与手机均可访问 | 08-25 ~ 08-26 |
 | **M4 增强（可选）** | 英文版 `/en/`、GitHub Actions 自动构建、Google Scholar 链接、自定义域名、访问统计 | 按需 | 之后 |
@@ -142,3 +141,4 @@ git add -A && git commit -m "content: 新增 xxx 论文" && git push
 
 ## 9. 变更记录
 - v1.0（2026-08-22）：初版。
+- v1.1（2026-08-22）：按用户要求移除"荣誉奖项"板块（板块数 8 → 7）；M1 完成。

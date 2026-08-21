@@ -12,14 +12,14 @@
 - [x] 🤖 git 初始化、`.gitignore`（排除简历原件）、`.gitattributes`、`CHANGELOG.md` — 08-22
 - [x] 🤖 `PLAN.md` / `TODO.md` / `README.md` / `CLAUDE.md` — 08-22
 
-## M1 可预览原型
-- [ ] 🤖 `build.py`：读取 `content/*.yml` → Jinja2 渲染 → `docs/index.html`，复制 `assets/` 到 `docs/assets/`，页脚写入构建日期，YAML 报错时给出文件名 + 行号
-- [ ] 🤖 `templates/index.html.j2`：导航 + 8 个 `<section>`（Header / 简介 + 兴趣 / 教育 / 论文 / 会议 / 项目与服务 / 能力 + 培训 / 奖项）+ 页脚
-- [ ] 🤖 `assets/css/style.css`：CSS 变量、760px 版心、系统中文字体栈、响应式断点 640px、论文三行结构样式、标签样式
-- [ ] 🤖 论文条目渲染规则：`**Huang, Y.**` → 加粗；有 `links` 则题目整体超链接到第一个 PDF，否则纯文本；`doi` 非空则追加 `[DOI]`
-- [ ] 🤖 `docs/.nojekyll`、占位照片（灰底 SVG）以便无图时布局不塌
-- [ ] 🤖 本地预览：`python -m http.server -d docs 8000`，用 Chrome DevTools 分别截桌面（1280）与手机（390）宽度截图存 `research/screenshots/`
-- [ ] 🤖 提交：`build:` 脚本与模板、`style:` 样式、`docs:` 首次构建产物
+## M1 可预览原型（2026-08-22）
+- [x] 🤖 `build.py`：读取 `content/*.yml` → Jinja2 渲染 → `docs/index.html`，复制 `assets/` 到 `docs/assets/`，页脚写入构建日期，YAML 报错时给出文件名 + 行号 — 08-22
+- [x] 🤖 `templates/index.html.j2`：导航 + 7 个板块（Header / 简介 + 兴趣 / 教育 / 论文 / 会议 / 项目与服务 / 能力 + 培训）+ 页脚；荣誉奖项按要求不加 — 08-22
+- [x] 🤖 `assets/css/style.css`：CSS 变量、760px 版心、系统中文字体栈（衬线标题 + 无衬线正文）、响应式断点 640px、论文三行结构样式、标签样式 — 08-22
+- [x] 🤖 论文条目渲染规则：`**Huang, Y.**` → 加粗；有 `links` 则题目整体超链接到第一个链接，否则纯文本；`doi` 非空则追加 `[DOI]` — 08-22
+- [x] 🤖 `docs/.nojekyll`、占位照片 `assets/img/photo-placeholder.svg` — 08-22
+- [x] 🤖 本地预览并截图：`research/screenshots/m1-desktop-1280.png`、`m1-mobile-390.png` — 08-22
+- [x] 🤖 提交：`build:` / `style:` / `content:` / `docs:` — 08-22
 
 ## M2 内容补全与打磨
 - [ ] 🙋 提供照片 → `assets/img/photo.jpg`（建议 ≥ 400×500，JPG < 300KB）
@@ -51,3 +51,4 @@
 
 ## 🧾 变更日志（本文件）
 - 2026-08-22：创建，M0 全部完成。
+- 2026-08-22：M1 全部完成（荣誉奖项板块按用户要求移除，`content/awards.yml` 已删除）。

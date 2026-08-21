@@ -40,7 +40,7 @@
 - [x] 🤖 通过 API 新建公开仓库 `BruceWong0312.github.io` — 08-22
 - [x] 🤖 `git remote add origin` → `git push -u origin main` — 08-22
 - [x] 🤖 通过 API 把 Pages 源设为 `main` / `/docs`（无需手动点 Settings） — 08-22
-- [ ] 🤝 访问 https://brucewong0312.github.io 验证（电脑 + 手机）
+- [x] 🤖 线上验证：HTML / CSS / 照片均 HTTP 200；Chrome 1280 与 390 宽度截图 `research/screenshots/m3-live-*.png` — 08-22
 - [x] 🤖 `README.md` 写上线地址；`CHANGELOG.md` 记录上线 — 08-22
 
 ## M4 增强（可选，按需勾选）
@@ -55,4 +55,4 @@
 ## 🧾 变更日志（本文件）
 - 2026-08-22：创建，M0 全部完成。
 - 2026-08-22：M1 全部完成（荣誉奖项板块按用户要求移除，`content/awards.yml` 已删除）。
-- 2026-08-22：M3 上线完成，剩余线上验证。
+- 2026-08-22：M3 上线完成并通过线上验证。

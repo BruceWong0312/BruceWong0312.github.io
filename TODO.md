@@ -21,11 +21,14 @@
 - [x] 🤖 本地预览并截图：`research/screenshots/m1-desktop-1280.png`、`m1-mobile-390.png` — 08-22
 - [x] 🤖 提交：`build:` / `style:` / `content:` / `docs:` — 08-22
 
-## M2 内容补全与打磨
+## M2 内容补全与打磨（进行中）
 - [ ] 🙋 提供照片 → `assets/img/photo.jpg`（建议 ≥ 400×500，JPG < 300KB）
 - [ ] 🙋 提供不含手机号的 CV PDF → `assets/files/CV_YunHuang.pdf`
-- [ ] 🙋 确认 / 补充：两篇论文 DOI、两次论坛年份、案例大赛年份（`content/` 里标 `# TODO` 处）
-- [ ] 🙋 确认：是否显示 QQ 邮箱、导师姓名、博士在研课题；Google Scholar / ORCID / GitHub 链接
+- [x] 🙋 两次论坛年份：ICCE 2024、清华论坛 2025 — 08-22
+- [ ] 🙋 两篇论文 DOI、福建社科年会获奖论文题目（`content/` 里标 `# TODO` 处）
+- [x] 🙋 QQ 邮箱不公开；导师张海波教授已写入简介与教育经历 — 08-22
+- [x] 🙋 学术培训新增 2025 年社科大第八届香樟青苗计划 — 08-22
+- [ ] 🙋 确认：博士在研课题；Google Scholar / ORCID / GitHub 链接
 - [ ] 🤝 润色简介（第三人称、4–5 句、去 AI 味；参考何国俊 Short Version 结构：身份 → 研究主题一句话 → 方法 → 发表）
 - [ ] 🤖 在研工作：若有 1–3 个在研题目，填入 `publications.yml: in_progress`
 - [ ] 🤖 全页检查：无 "TODO" 字样、无空板块（数据为空的板块自动隐藏）、所有链接可点
